@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+<%- include('partials/nav') %>
+<%- include('partials/banner') %>
+  
+  
+  <h1>Trivia</h1>
+  <p>In what country was the <%= variant.variant_name %> variant first detected?</p>
+
+  <form id="trivia-form">
+    <input type="text" id="user-response" class="form-control mb-2" placeholder="Type your answer here" required>
+    <input type="hidden" id="correct-answer" value="<%= variant.country_first_detected %>">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <div id="feedback" class="mt-2"></div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/script.js"></script>
+
+  <%- include('partials/footer') %>

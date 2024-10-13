@@ -1,0 +1,124 @@
+<%- include('partials/header') %>
+
+<%- include('partials/nav') %>
+<%- include('partials/banner') %>
+
+
+  <div class="container mt-4">
+    <h1>COVID-19 Variants</h1>
+    <ul class="list-group">
+        <% variants.forEach(variant => { %>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <a href="#" class="variant-link" data-variant='<%= JSON.stringify(variant) %>' data-bs-toggle="modal" data-bs-target="#variantModal">
+                    <%= variant.variant_name %>
+                  </a>
+
+                    - Detected in <%= variant.country_first_detected %> on <%= variant.date_first_detected.toISOString().split('T')[0] %>
+                </div>
+                <a href="/update-variant/<%= variant.variant_id %>" class="btn btn-primary btn-sm">Update</a>
+            </li>
+
+              <div class="modal fade" id="variantModal<%= variant.variant_id %>" tabindex="-1" aria-labelledby="variantModalLabel" aria-hidden="true">
+               <div class="modal-dialog modal-dialog-centered">
+                 <div class="modal-content">
+                   <div class="modal-header">
+                     <h5 class="modal-title" id="variantModalLabel"><%= variant.variant_name %></h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                   </div>
+                   <div class="modal-body">
+                     <div class="row">
+                       <div class="col-md-6">
+                         <img src="<%= variant.image %>" alt="<%= variant.variant_name %>" class="img-fluid">
+                       </div>
+                       <div class="col-md-6">
+                         <p><strong>Description:</strong> <%= variant.description %></p>
+                         <p><strong>Classification:</strong> <%= variant.classification_id %>  </p>
+                        </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+
+           <% }) %>
+         </ul>
+       </div>
+
+             </div>
+
+             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+              <script src="/js/script.js"></script>
+
+              <%- include('partials/footer') %>
+
+<br> <br>
+
+                <table border="1" width="600" cellpadding="10px">
+                  <tbody>
+                    <tr>
+                      <th>#</th>
+                      <th>Task Description</th>
+                      <th>Points</th>
+                    </tr>
+                    <tr style="color:green">
+                      <td>1</td>
+                      <td>The <strong>Home</strong> page lists all variants retrieved from the database ordered by most recently detected. <br></td>
+                      <td width="20" align="center">20</td>
+                    </tr>
+                    <tr style="color:green">
+                      <td>2</td>
+                      <td>In the <strong>Home</strong> page, the variant name, description, classification, classification attributes, and variant image are displayed when clicking on a variant. <br></td>
+                      <td width="20" align="center">30</td>
+                    </tr>
+                    <tr style="color:green">
+                      <td>3</td>
+                      <td>In the <strong>Home</strong> page, the variant information is displayed in a Modal window using a two-column layout<br></td>
+                      <td width="20" align="center">15</td>
+                    </tr>
+                    <tr style="color:green">
+                      <td>4</td>
+                      <td>The <strong>Add Variant</strong> page allows user to add a new variant into the database. The values for the "Classification" dropdown menu come from database.<br></td>
+                      <td width="20" align="center">30</td>
+                    </tr>
+                    <tr style="color:green">
+                      <td>5</td>
+                      <td>The <strong>Update Variant</strong> page allow users to update the "country_first_detected" and "classification_id" fields.  Fields are prepopulated. The Classification values come from the database <br></td>
+                      <td width="20" align="center">30</td>
+                    </tr>
+                    <tr style="color:green">
+                      <td>6</td>
+                      <td>The <strong>Trivia</strong> page displays a  variant name randomly retrieved from the database and the Country values come from the database.  <br>
+                      </td>
+                      <td width="20" align="center">20</td>
+                    </tr>
+                    <tr style="color:green">
+                      <td>7</td>
+                      <td>In the <strong>Trivia</strong> page, the question is graded through a Web API, color-coded feedback is displayed<br></td>
+                      <td width="20" align="center">30</td>
+                    </tr>
+                    <tr style="color:green">
+                      <td>8</td>
+                      <td>All pages use Partials to display a header, a banner image, a navigation menu, and a footer.<br></td>
+                      <td width="20" align="center">15</td>
+                    </tr>
+                    <tr style="color:green">
+                      <td>9</td>
+                      <td>Your submission has a nice style using Bootstrap or CSS in an external file with at least 10 properties.	
+                      </td>
+                      <td width="20" align="center">10</td>
+                    </tr>
+                    <tr style="color:green">
+                      <td>10</td>
+                      <td>This rubric is properly included and updated.</td>
+                      <td width="20" align="center">2</td>
+                    </tr>
+
+                    <tr>
+                      <td></td>
+                      <td>TOTAL </td>
+                      <td width="20" align="center">202</td>
+                    </tr>
+                  </tbody>
+                </table>
+
