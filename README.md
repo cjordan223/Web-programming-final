@@ -20,12 +20,6 @@ The app was tested and reviewed, earning full marks. The server is no longer liv
 - **Public Resources**: Static assets are served from the `public` folder.
 - **Extra Credit Features**: Additional features for bonus points are implemented as well.
 
-## Setup and Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/final-exam-project.git
-   cd final-exam-project
 ## Screenshots
 
 Here are a few screenshots of the project in action:
