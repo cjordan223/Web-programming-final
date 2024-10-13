@@ -1,6 +1,6 @@
 # Web Programming Final Exam Project
 
-This project is a web application built using **Node.js** and **Express** for the backend, completed in just 2 hours. The project contains all the required logic and received **full marks** along with all the additional **extra credit** (E.C.) requirements. The server was taken down after testing, but the full codebase remains available in this repository.
+This project is a web application built using **Node.js** and **Express** for the backend, completed in just 2 hours. The server was taken down after testing, but the full codebase remains available in this repository.
 
 
 ## Project Overview
